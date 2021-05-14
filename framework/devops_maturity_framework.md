@@ -34,13 +34,13 @@ CAPABILITY | CRAWL | WALK | RUN
 ---------- | ----- | ---- | ---
 Gather and implement customer feedback | No customer (internal or external) feedback gathered in development cycles | Customer feedback (internal or external) gathered on an ad-hoc basis | Customer feedback (internal or external) gathered after all releases
 Work in small batches and deploy more frequently | Big work batch size and releases on a monthly basis or longer | Work batch size optimized for weekly releases, but deployment frequency not in sync with business requirements (e.g lead time) | Work batch size optimized for frequent releases and deployment frequency in sync with business requirements (e.g. lead time)
-Have a lightweight change approval process | Change approval needed from multiple parties outside the team | Change approval needed within the team | 	No change approval needed or change approval process totally automated
+Have a lightweight change approval process | Change approval needed from multiple parties outside the team | Change approval needed within the team | 	No change approval needed or change approval process totally automated 
 Integrate application data into Big Data Platform | No application data transferred at all | Partial business-relevant application data transferred to Big Data Platform or provided via API | All business-relevant application data transferred to Big Data Platform
 SRE role and activities | No clear SRE role and responsibility from Product team perspective | SRE tasks are defined and agreed from Execution (Operations, Automation, Hotfix) perspective | SRE tasks are defined for  Execution and Governance areas and agreed with all stakeholders (Business, Development)
 Postmortems | No causal analysis done for all outages | All outage RCA conducted and tied to change / release | Blameless Postmortems are conducted for all outages
 Resiliency / Chaos Engineering | No resiliency tests are conducted | Define environment dependencies (failure points) and execute resiliency tests to ensure no customer impact | Regular chaos (resiliency) exercise scheduled basis stead state / functionality change
 
-#### MANAGEMENT & MONITORING 
+#### MANAGEMENT & OBSERVABILITY 
 
 ---------- 
 
@@ -69,6 +69,13 @@ Collaboration | No collaboration with Operations around product design from stab
 
 CAPABILITY | CRAWL | WALK | RUN  
 ---------- | ----- | ---- | ---
-Use a loosely coupled architecture | Monolithic application with a high level of interdependencies | Re-architecture in progress moving from a monolithic solution to a microservice-based architecture| System has no or very few direct dependencies to other systems. And those dependencies are tied to open standards and not tied to technologies and frameworks (e.g. Java RPC)
 Focus on independent deployability and testability | Dependent deployability and testability across teams | Some components can be deployed and tested independently but parts of the components still have dependencies across teams| Teams can deploy and test their systems independently
-Use established Platform Engineering solutions as a default | Custom solutions used even though provided by Platform Engineering | All solution aligned with Platform Engineering, Solution and Domain Architecture, but exceptions were granted | All solutions aligned with Platform Engineering, Solution and Domain Architecture and no custom solutions used that are provided by Platform Engineering
+
+
+
+#### Notes
+
+1.  Need a good way to express zero ticket goal.  Over-reliance on Tickets can be an antipattern.
+1.  Terms like "lightweight" are meaningless.  Everybody thinks their process is "lightweight".
+1.  Need to increase observability section to express need for applications to be observable, not just monitorable.
+1.  What about capacity? performance? scale down (because everybody can do scale up)?  Metrics framework?
